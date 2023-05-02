@@ -5,7 +5,7 @@ variable "project_id" {
 }
 variable "region" {
     type = string
-    default = "europe-west1"
+    default = "europe-west9"
 }
 variable "service-account-id" {
     type = string
