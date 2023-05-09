@@ -29,3 +29,19 @@ variable "machine_type" {
   default     = "e2-medium"
   description = "type of machine use for nodes"
 }
+
+# Mysql vars
+variable "instance_name" {
+  type        = string
+  description = "mysql-instance"
+}
+
+variable "instance_type" {
+  type        = string
+  description = "db-n1-standard-1"
+}
+
+variable "database_name" {
+  type        = string
+  description = "amagen-database"
+}
