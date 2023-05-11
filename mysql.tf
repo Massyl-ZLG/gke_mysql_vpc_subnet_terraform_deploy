@@ -9,9 +9,10 @@ resource "google_sql_database_instance" "cloud_sql_instance" {
       ipv4_enabled    = false
       private_network = google_compute_network.vpc.id
       
-      authorized_networks {
-        name = "default"
-      }
+    authorized_networks {
+      name  = google_compute_subnetwork.subnet.name
+      value = google_compute_subnetwork.subnet.ip_cidr_range
+    }
       
       #enable_private_path_for_google_cloud_services = true
     }
