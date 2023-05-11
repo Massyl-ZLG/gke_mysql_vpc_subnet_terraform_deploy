@@ -33,15 +33,15 @@ variable "machine_type" {
 # Mysql vars
 variable "instance_name" {
   type        = string
-  description = "mysql-instance"
+  default = "mysql-instance"
 }
 
 variable "instance_type" {
   type        = string
-  description = "db-n1-standard-1"
+  default = "db-n1-standard-1"
 }
 
 variable "database_name" {
   type        = string
-  description = "amagen-database"
+  default = "amagen-database"
 }
