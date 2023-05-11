@@ -6,15 +6,15 @@ resource "google_sql_database_instance" "cloud_sql_instance" {
   settings {
     tier = var.instance_type
     ip_configuration {
-      ipv4_enabled    = false
+      # voir pour la val 
+      ipv4_enabled    = true
       private_network = google_compute_network.vpc.id
       
-    authorized_networks {
-      name  = google_compute_subnetwork.subnet.name
-      value = "10.10.0.0/24"
-    }
+    # authorized_networks {
+    #   name  = google_compute_subnetwork.subnet.name
+    #   value = google_compute_subnetwork.subnet.ip_cidr_range
+    # }
       
-      #enable_private_path_for_google_cloud_services = true
     }
     
     backup_configuration {
