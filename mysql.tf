@@ -8,7 +8,7 @@ resource "google_sql_database_instance" "cloud_sql_instance" {
     ip_configuration {
       ipv4_enabled                                  = false
       private_network                               = google_compute_network.vpc.id
-      enable_private_path_for_google_cloud_services = true
+      #enable_private_path_for_google_cloud_services = true
     }
     backup_configuration {
       enabled = true
