@@ -11,7 +11,7 @@ resource "google_sql_database_instance" "cloud_sql_instance" {
       
     authorized_networks {
       name  = google_compute_subnetwork.subnet.name
-      value = 10.10.0.6
+      value = "10.10.0.6"
     }
       
       #enable_private_path_for_google_cloud_services = true
