@@ -5,6 +5,9 @@ resource "google_sql_database_instance" "cloud_sql_instance" {
 
   settings {
     tier = var.instance_type
+    authorized_networks {
+      name = "default"
+    }
     ip_configuration {
       ipv4_enabled                                  = false
       private_network                               = google_compute_network.vpc.id
