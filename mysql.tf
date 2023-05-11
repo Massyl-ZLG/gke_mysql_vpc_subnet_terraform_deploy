@@ -7,7 +7,7 @@ resource "google_sql_database_instance" "cloud_sql_instance" {
     tier = var.instance_type
     ip_configuration {
       # voir pour la val 
-      ipv4_enabled    = true
+      ipv4_enabled    = false
       private_network = google_compute_network.vpc.id
       
     authorized_networks {
