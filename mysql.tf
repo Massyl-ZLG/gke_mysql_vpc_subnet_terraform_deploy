@@ -12,7 +12,7 @@ resource "google_sql_database_instance" "cloud_sql_instance" {
       
     authorized_networks {
       name  = "test"
-      value = "8.8.8.8/32"
+      value = google_compute_subnetwork.subnet.ip_cidr_range
     }
       
     }

@@ -1,5 +1,5 @@
 # GKE_Terraform
-This project allows the creation of a gke cluster on the GCP cloud and the installation of a gitops tool argoCD , using terraform whose buckets are stored on gcs.
+This project allows the creation of a GKE cluster, VPC, subnet, and mysql Database on GCP, using terraform.
 
 ## Manual install of gke cluster 
 ### install gke cluster
@@ -26,7 +26,7 @@ $ gcloud container clusters get-credentials $(terraform output -raw kubernetes_c
 ```bash 
 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta8/aio/deploy/recommended.yaml
 ```
-Create a ClusterRoleBinding ressource to authenticate with acces token 
+### Create a ClusterRoleBinding ressource to authenticate with acces token 
 ``` 
 $ kubectl apply -f https://raw.githubusercontent.com/hashicorp/learn-terraform-provision-gke-cluster/main/kubernetes-dashboard-admin.rbac.yaml
 $ kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep service-controller-token | awk '{print $1}')
